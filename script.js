@@ -55,6 +55,7 @@ const users = [
     contacted: "",
   },
   {
+    column: "Street",
     initials: "L",
     name: "&lt;liz@airbornedronesco&gt;",
     company: "Airborne Drones",
@@ -67,7 +68,7 @@ const users = [
   },
   {
     initials: "AA",
-    name: "Ale Bar Av",
+    name: "'Ale Bar Av'",
     company: "Cantera",
     title: "-",
     email: "ale@cantera.co",
@@ -77,8 +78,9 @@ const users = [
     contacted: "",
   },
   {
+    column: "Last Contacted",
     initials: "AS",
-    name: "Amandeep Singh",
+    name: "'Amandeep Singh'",
     company: "Arrow PC Network Pvt. ltd.",
     title: "-",
     email: "aman@arrowpc.co.in",
@@ -88,8 +90,7 @@ const users = [
     contacted: "8/16/2018",
   },
   {
-    initials: "AM",
-    name: "Amit Kumar Mandal",
+    name: "'Amit Kumar Mandal'",
     company: "Cleartax",
     title: "-",
     email: "amit.mandal@cleartax.in",
@@ -100,8 +101,7 @@ const users = [
   },
   ,
   {
-    initials: "AS",
-    name: "Andreas Semmler",
+    name: "'Andreas Semmler'",
     company: "Werkmeister & Company GmbH",
     title: "-",
     email: "andreas.semmler@werko.de",
@@ -112,7 +112,7 @@ const users = [
   },
   {
     initials: "AL",
-    name: "Anita Lam",
+    name: "'Anita Lam'",
     company: "Beyond Media Group",
     title: "-",
     email: "alam@bmgww.com",
@@ -122,8 +122,7 @@ const users = [
     contacted: "",
   },
   {
-    initials: "AD",
-    name: "Annika DiMeo",
+    name: "'Annika DiMeo'",
     company: "Brand+Aid",
     title: "Chief of Staff",
     email: "annika@brandaiding.com",
@@ -133,8 +132,7 @@ const users = [
     contacted: "9/23/2020",
   },
   {
-    initials: "AA",
-    name: "Azam Ameer",
+    name: "'Azam Ameer'",
     company: "Dream Design Property",
     title: "-",
     email: "azam.a@ddpproperty.com.au",
@@ -144,8 +142,7 @@ const users = [
     contacted: "",
   },
   {
-    initials: "BM",
-    name: "Barb Merrill",
+    name: "'Barb Merrill'",
     company: "Flathead Valley Brokers",
     title: "-",
     email: "barb@fvbmt.com",
@@ -155,8 +152,7 @@ const users = [
     contacted: "5/22/2019",
   },
   {
-    initials: "BG",
-    name: "Brittany George",
+    name: "'Brittany George'",
     company: "Midwest Engineering",
     title: "-",
     email: "test@testing.com",
@@ -194,46 +190,55 @@ users.map((user) => {
   initials.innerHTML = user.initials;
   initials.appendChild(initialsText);
 
-  // Columns
-  let column1 = document.createElement("div");
-  column1.classList.add("column-name", "col-1");
-  column1.innerHTML = user.name;
-  firstName.appendChild(column1);
+  //   Rows
+  let row1 = document.createElement("p");
+  row1.classList.add("row1", "names");
+  row1.innerHTML = user.name;
+  firstName.appendChild(row1);
 
-  let column2 = document.createElement("div");
-  column2.classList.add("column-name", "col-2");
-  column2.innerHTML = user.company;
-  company.appendChild(column2);
+  let row2 = document.createElement("p");
+  row2.classList.add("row2", "company");
+  row2.innerHTML = user.company;
+  company.appendChild(row2);
 
-  let column3 = document.createElement("div");
-  column3.classList.add("column-name", "col-3");
-  column3.innerHTML = user.title;
-  title.appendChild(column3);
+  let row3 = document.createElement("p");
+  row3.classList.add("row3", "title");
+  row3.innerHTML = user.title;
+  title.appendChild(row3);
 
-  let column4 = document.createElement("div");
-  column4.classList.add("column-name", "col-4");
-  column4.innerHTML = user.email;
-  email.appendChild(column4);
+  let row4 = document.createElement("p");
+  row4.classList.add("row4", "email");
+  row4.innerHTML = user.email;
+  email.appendChild(row4);
 
-  let column5 = document.createElement("div");
-  column5.classList.add("column-name", "col-5");
-  column5.innerHTML = user.owned;
-  ownedBy.appendChild(column5);
+  let row5 = document.createElement("p");
+  row5.classList.add("row5", "owned");
+  row5.innerHTML = user.owned;
+  ownedBy.appendChild(row5);
 
-  let column6 = document.createElement("div");
-  column6.classList.add("column-name", "col-6");
-  column6.innerHTML = user.street;
-  street.appendChild(column6);
+  let row6 = document.createElement("p");
+  row6.classList.add("row6", "street");
+  row6.innerHTML = user.street;
+  street.appendChild(row6);
 
-  let column7 = document.createElement("div");
-  column7.classList.add("column-name", "col-7");
-  column7.innerHTML = user.created;
-  created.appendChild(column7);
+  let row7 = document.createElement("p");
+  row7.classList.add("row7", "created");
+  row7.innerHTML = user.created;
+  created.appendChild(row7);
 
-  let column8 = document.createElement("div");
-  column8.classList.add("column-name", "col-8");
-  column8.innerHTML = user.contacted;
-  lastContacted.appendChild(column8);
+  let row8 = document.createElement("p");
+  row8.classList.add("row8", "last-contacted");
+  row8.innerHTML = user.contacted;
+  lastContacted.appendChild(row8);
+
+  console.log("row1", row1.innerHTML);
+  console.log("row2", row2.innerHTML);
+  console.log("row3", row3.innerHTML);
+  console.log("row4", row4.innerHTML);
+  console.log("row5", row5.innerHTML);
+  console.log("row6", row6.innerHTML);
+  console.log("row7", row7.innerHTML);
+  console.log("row8", row8.innerHTML);
 
   // Adding all children
   person.append(
