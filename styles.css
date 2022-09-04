@@ -751,6 +751,30 @@ input {
   padding: 0;
 }
 
+.bottom-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logo {
+  font-family: "Abril Fatface", cursive;
+  color: white;
+  align-self: baseline;
+  font-size: 25px;
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+
+.dots {
+  color: white;
+  padding-right: 30px;
+}
+
 @media (max-width: 730px) {
   .open-menu {
     display: none;

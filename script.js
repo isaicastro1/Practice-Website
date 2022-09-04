@@ -169,9 +169,6 @@ const users = [
   },
 ];
 
-let firstUser = users[0].name;
-console.log(firstUser);
-
 const allUsers = document.getElementById("all-users");
 
 let i = 1;
