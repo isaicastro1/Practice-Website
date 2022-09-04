@@ -1,7 +1,7 @@
 const users = [
   {
     initials: "IO",
-    name: `""><img src=x onerror=prompt(...`,
+    name: `""<>img src=x onerror=prompt(...`,
     company: "tested12's Company",
     title: "-",
     email: "zealmaker1@gmail.com",
@@ -169,6 +169,9 @@ const users = [
   },
 ];
 
+let firstUser = users[0].name;
+console.log(firstUser);
+
 const allUsers = document.getElementById("all-users");
 
 let i = 1;
@@ -242,15 +245,6 @@ users.map((user) => {
   row8.innerHTML = user.contacted;
   lastContacted.appendChild(row8);
 
-  //   console.log("row1", row1.innerHTML);
-  //   console.log("row2", row2.innerHTML);
-  //   console.log("row3", row3.innerHTML);
-  //   console.log("row4", row4.innerHTML);
-  //   console.log("row5", row5.innerHTML);
-  //   console.log("row6", row6.innerHTML);
-  //   console.log("row7", row7.innerHTML);
-  //   console.log("row8", row8.innerHTML);
-
   // Adding all children
   person.append(
     firstName,
@@ -269,13 +263,16 @@ users.map((user) => {
   topPixels += 51;
 
   allUsers.appendChild(person);
-  //   console.log(person);
 });
 
 // Functionality
 
 let closeButton = document.getElementById("open-menu-btn");
 let menu = document.getElementById("right-menu");
+
+window.onLoad = () => {
+  menu.classList.remove("hide");
+};
 
 const closeMenu = () => {
   menu.classList.add("hide");
@@ -284,13 +281,45 @@ const closeMenu = () => {
 closeButton.addEventListener("click", closeMenu);
 
 let allUserProfiles = document.querySelectorAll(".users");
+let menuName = document.querySelectorAll("#name");
+let company = document.querySelectorAll("#company");
+let title = document.querySelector("#title");
+let email = document.querySelector("#email");
+let owned = document.querySelector("#owner");
+let street = document.querySelector("#street");
+let created = document.querySelector("#created");
+let contacted = document.querySelector("#contacted");
+let initials = document.getElementById("prof-initials");
 
-const openUserProfile = () => {
+const openMenu = () => {
   menu.classList.remove("hide");
+  menu.classList.add("show");
 };
 
 allUserProfiles.forEach((user) => {
   if (!user.classList.contains("all-columns")) {
-    user.addEventListener("click", openUserProfile);
+    user.addEventListener("click", () => {
+      openMenu();
+
+      initials.innerHTML = user.children[0].children[1].innerHTML;
+
+      menuName.forEach((name) => {
+        name.innerHTML = user.children[0].children[0].innerHTML;
+      });
+
+      company.forEach((company) => {
+        company.innerHTML = user.children[1].children[0].innerHTML;
+      });
+
+      if (user.children[2].children[0].innerHTML === "-") {
+        title.innerHTML = '<span style="color:gray">  Add Title </span>';
+      } else {
+        title.innerHTML = user.children[2].children[0].innerHTML;
+      }
+
+      email.innerHTML = user.children[3].children[0].innerHTML;
+
+      owned.innerHTML = user.children[4].children[0].innerHTML;
+    });
   }
 });
