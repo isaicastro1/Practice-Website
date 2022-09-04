@@ -2,6 +2,7 @@ html {
   height: 100vh;
   width: 100vw;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -295,6 +296,10 @@ body {
   font-size: 17px !important;
 }
 
+.material-symbols-outlined:hover {
+  cursor: pointer;
+}
+
 ul {
   display: flex;
   list-style: none;
@@ -457,6 +462,16 @@ li .badge {
   align-items: center;
 }
 
+.users:hover {
+  background-color: #dfe5e8;
+  cursor: pointer;
+}
+
+.all-columns:hover {
+  cursor: default;
+  background-color: white;
+}
+
 .row1,
 .row2,
 .row3,
@@ -571,4 +586,139 @@ input {
 
 .question:hover {
   cursor: pointer;
+}
+
+.open-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: calc(100vh - 63px);
+  background-color: white;
+  z-index: 5;
+  box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
+  -webkit-box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
+  -moz-box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
+  transition: 0.5s ease-in-out;
+}
+
+.hide {
+  transform: translateX(500px);
+}
+
+.menu-nav {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+  width: 100%;
+  min-height: 40px;
+}
+
+.left {
+  width: 39px;
+  height: 100%;
+}
+
+.right {
+  display: flex;
+  width: 120px;
+  height: 100%;
+}
+
+.left *,
+.open-logo {
+  padding: 10px;
+}
+
+.menu-profile {
+  display: flex;
+  min-height: 60px;
+}
+
+.prof-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(228, 228, 228);
+  margin: 10px 10px 0 20px;
+}
+
+.prof-names {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.prof-name {
+  display: flex;
+  padding-left: 5px;
+  align-items: center;
+  height: 60%;
+  font-size: 15px;
+  color: black;
+}
+
+.company-name {
+  padding-left: 5px;
+  height: 40%;
+  font-size: 12px;
+  color: black;
+}
+
+.menu-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 12px;
+  padding: 15px 0 0 0;
+}
+
+.details,
+.activity,
+.related {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 33%;
+  height: 30px;
+}
+
+.details {
+  border-bottom: 4px solid blue;
+}
+
+.prof-info {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.profile-title {
+  height: 56px;
+}
+
+.profile-title * {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.input {
+  margin: 10px 5px 10px 5px;
+}
+
+.field {
+  height: 8px;
+  margin: 4px;
+}
+
+.must {
+  padding: 0;
 }

@@ -242,14 +242,14 @@ users.map((user) => {
   row8.innerHTML = user.contacted;
   lastContacted.appendChild(row8);
 
-  console.log("row1", row1.innerHTML);
-  console.log("row2", row2.innerHTML);
-  console.log("row3", row3.innerHTML);
-  console.log("row4", row4.innerHTML);
-  console.log("row5", row5.innerHTML);
-  console.log("row6", row6.innerHTML);
-  console.log("row7", row7.innerHTML);
-  console.log("row8", row8.innerHTML);
+  //   console.log("row1", row1.innerHTML);
+  //   console.log("row2", row2.innerHTML);
+  //   console.log("row3", row3.innerHTML);
+  //   console.log("row4", row4.innerHTML);
+  //   console.log("row5", row5.innerHTML);
+  //   console.log("row6", row6.innerHTML);
+  //   console.log("row7", row7.innerHTML);
+  //   console.log("row8", row8.innerHTML);
 
   // Adding all children
   person.append(
@@ -269,5 +269,28 @@ users.map((user) => {
   topPixels += 51;
 
   allUsers.appendChild(person);
-  console.log(person);
+  //   console.log(person);
+});
+
+// Functionality
+
+let closeButton = document.getElementById("open-menu-btn");
+let menu = document.getElementById("right-menu");
+
+const closeMenu = () => {
+  menu.classList.add("hide");
+};
+
+closeButton.addEventListener("click", closeMenu);
+
+let allUserProfiles = document.querySelectorAll(".users");
+
+const openUserProfile = () => {
+  menu.classList.remove("hide");
+};
+
+allUserProfiles.forEach((user) => {
+  if (!user.classList.contains("all-columns")) {
+    user.addEventListener("click", openUserProfile);
+  }
 });
