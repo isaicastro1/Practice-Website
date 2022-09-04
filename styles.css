@@ -1,6 +1,7 @@
 html {
   height: 100vh;
   width: 100vw;
+  overflow-y: hidden;
 }
 
 body {
@@ -239,19 +240,26 @@ body {
   border-bottom: 3px solid #dfe5e8;
 }
 
+.nav2,
+.top-nav {
+  z-index: 5;
+  overflow: hidden;
+}
+
 .left-nav {
   display: flex;
   height: 50px;
   width: 54px;
   border-bottom: 3px solid blue;
   align-items: center;
-  margin: 0 0 0 20px;
+  margin: 0 20px 0 20px;
 }
 
 .tab {
   left: 50px;
   width: max-content;
   font-weight: 500;
+  padding-right: 20px;
 }
 
 .search-input {
@@ -260,6 +268,13 @@ body {
   border-radius: 20px;
   border: none;
   background: #dfe5e8;
+  font-size: 1vw;
+}
+
+@media (max-width: 1035px) {
+  .search-input {
+    font-size: 10px;
+  }
 }
 
 .right-nav ul {
@@ -290,22 +305,36 @@ ul li:hover {
 }
 
 li .badge {
-  position: absolute;
-  top: 8px;
-  right: 100px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  text-align: center;
-  padding-top: 2px;
+  content: "47";
+  position: relative;
   background: red;
+  height: 0.7rem;
+  top: -2.3rem;
+  right: -1.05rem;
+  width: 0.75rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 0.55rem;
+  font-weight: bolder;
+  border-radius: 50%;
   color: white;
-  font-size: 10px;
+  border: 1px solid red;
+}
+
+.notifications {
+  padding-top: 30px;
 }
 
 @media (max-width: 1400px) {
   .search-input {
-    width: 30vw;
+    width: 40vw;
+  }
+}
+
+@media (min-width: 1400px) {
+  .search-input {
+    font-size: 13px;
   }
 }
 
@@ -314,7 +343,7 @@ li .badge {
   justify-content: space-between;
   align-content: center;
   width: calc(100vw - 325px);
-  height: 60px;
+  height: 65px;
   position: fixed;
   top: 50px;
   left: 325px;
@@ -385,18 +414,6 @@ li .badge {
   padding-left: 55px;
 }
 
-.box::after {
-  content: "";
-  position: absolute;
-  min-height: 15px;
-  min-width: 15px;
-  top: 16px;
-  left: 20px;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 2px;
-}
-
 .column-name {
   font-size: 11px;
   width: 150px;
@@ -407,10 +424,8 @@ li .badge {
   flex-direction: row;
   align-items: center;
   gap: 5px;
-  width: min-content;
-  min-width: 100px;
-  width: 135px;
-  height: 50px;
+  min-width: 135px;
+  height: 45px;
   font-size: 11px;
 }
 
@@ -425,19 +440,19 @@ li .badge {
 
 .all-users {
   position: absolute;
-  top: 160px;
+  top: 110px;
   left: 325px;
   width: calc(100vw - 325px);
-  height: calc(100vh - 160px);
+  max-width: 1750px;
+  height: calc(100vh - 100px);
 }
 
 .users {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: calc(100vw - 365px);
-  height: 55px;
+  height: 48px;
   gap: 30px;
-  padding-left: 55px;
   border-bottom: 1px solid #dfe5e8;
   align-items: center;
 }
@@ -450,13 +465,61 @@ li .badge {
 .row6,
 .row7,
 .row8 {
-  flex-direction: column;
   width: 135px;
   font-size: 11px;
 }
 
 input {
   text-align: center;
+}
+
+.first-name {
+  justify-content: center;
+  min-width: 270px;
+}
+
+.first-name-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+  border-right: 1px solid #dfe5e8;
+  min-width: 270px;
+}
+
+.first-name::before {
+  content: "";
+  position: relative;
+  top: 0;
+  left: -90px;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid black;
+}
+
+.names {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  align-items: center;
+}
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 13px;
+}
+
+.outer-initials {
+  left: 65px;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 50%;
 }
 
 .row {
@@ -472,7 +535,7 @@ input {
 }
 
 .column-symbols {
-  padding: 0;
+  padding: 7px 0 0 0;
 }
 
 .bottom-btn {
@@ -483,7 +546,29 @@ input {
 }
 
 .question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   width: 50px;
-  background-color: ;
+  background-color: rgb(251, 89, 127);
+  color: white;
+  border: none;
+  border-radius: 50%;
+}
+
+.help {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  width: 80%;
+  height: 60%;
+  background-color: white;
+  color: rgb(251, 89, 127);
+  border-radius: 3px;
+}
+
+.question:hover {
+  cursor: pointer;
 }

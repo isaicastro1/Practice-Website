@@ -11,7 +11,7 @@ const users = [
     contacted: "4/28/2022",
   },
   {
-    initials: "A",
+    initials: "A ",
     name: '"-alert(document.domain)-"',
     company: "Maillak",
     title: "-",
@@ -56,7 +56,7 @@ const users = [
   },
   {
     column: "Street",
-    initials: "L",
+    initials: "L ",
     name: "&lt;liz@airbornedronesco&gt;",
     company: "Airborne Drones",
     title: "-",
@@ -91,6 +91,7 @@ const users = [
   },
   {
     name: "'Amit Kumar Mandal'",
+    initials: "AM",
     company: "Cleartax",
     title: "-",
     email: "amit.mandal@cleartax.in",
@@ -102,6 +103,7 @@ const users = [
   ,
   {
     name: "'Andreas Semmler'",
+    initials: "AS",
     company: "Werkmeister & Company GmbH",
     title: "-",
     email: "andreas.semmler@werko.de",
@@ -123,6 +125,7 @@ const users = [
   },
   {
     name: "'Annika DiMeo'",
+    initials: "AD",
     company: "Brand+Aid",
     title: "Chief of Staff",
     email: "annika@brandaiding.com",
@@ -133,6 +136,7 @@ const users = [
   },
   {
     name: "'Azam Ameer'",
+    initials: "AA",
     company: "Dream Design Property",
     title: "-",
     email: "azam.a@ddpproperty.com.au",
@@ -143,6 +147,7 @@ const users = [
   },
   {
     name: "'Barb Merrill'",
+    initials: "BM",
     company: "Flathead Valley Brokers",
     title: "-",
     email: "barb@fvbmt.com",
@@ -153,6 +158,7 @@ const users = [
   },
   {
     name: "'Brittany George'",
+    initials: "BG",
     company: "Midwest Engineering",
     title: "-",
     email: "test@testing.com",
@@ -175,6 +181,7 @@ users.map((user) => {
   i++;
 
   // creating all user's info
+  let initialsOuter = document.createElement("div");
   let initials = document.createElement("div");
   let firstName = document.createElement("div");
   let company = document.createElement("div");
@@ -188,13 +195,17 @@ users.map((user) => {
   //   initials
   let initialsText = document.createElement("p");
   initials.innerHTML = user.initials;
+  initials.classList.add("initials");
   initials.appendChild(initialsText);
+  initialsOuter.classList.add("outer-initials");
+  initialsOuter.appendChild(initials);
 
   //   Rows
   let row1 = document.createElement("p");
   row1.classList.add("row1", "names");
   row1.innerHTML = user.name;
-  firstName.appendChild(row1);
+  firstName.classList.add("first-name-div");
+  firstName.append(row1, initialsOuter);
 
   let row2 = document.createElement("p");
   row2.classList.add("row2", "company");
