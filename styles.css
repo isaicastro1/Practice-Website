@@ -595,15 +595,17 @@ input {
 }
 
 .open-menu {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   position: absolute;
   display: none;
-  bottom: 0;
+  height: calc(100vh - 63px);
+  bottom: -20px;
   right: -400px;
   width: 400px;
-  height: calc(100vh - 63px);
   background-color: white;
+  overflow: scroll;
+  margin-top: 20px;
   z-index: 5;
   box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
   -webkit-box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);

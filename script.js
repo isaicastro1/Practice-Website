@@ -263,21 +263,15 @@ users.map((user) => {
 });
 
 // Functionality
-
 let closeButton = document.getElementById("open-menu-btn");
 let menu = document.getElementById("right-menu");
 let html = document.documentElement;
 
-window.onLoad = () => {
-  menu.classList.remove("hide");
-};
-
 const closeMenu = () => {
   menu.classList.add("hide");
   menu.classList.remove("show");
-  setTimeout(() => {
-    menu.classList.add("disappear");
-  }, 500);
+  menu.classList.add("disappear");
+  html.style.overflowX = "scroll";
 };
 
 closeButton.addEventListener("click", closeMenu);
@@ -296,6 +290,11 @@ let initials = document.getElementById("prof-initials");
 const openMenu = () => {
   menu.classList.add("show");
   menu.classList.remove("hide", "disappear");
+  html.scrollLeft = 0;
+
+  if (menu.classList.contains("show")) {
+    html.style.overflowX = "hidden";
+  }
 };
 
 allUserProfiles.forEach((user) => {
