@@ -39,6 +39,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 15px;
 }
 
 .prof-pic {
@@ -595,12 +596,11 @@ input {
 }
 
 .open-menu {
-  /* display: flex; */
   flex-direction: column;
   position: absolute;
   display: none;
   height: calc(100vh - 63px);
-  bottom: -20px;
+  bottom: -10px;
   right: -400px;
   width: 400px;
   background-color: white;
@@ -610,7 +610,7 @@ input {
   box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
   -webkit-box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
   -moz-box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
-  transition: transform 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .disappear {
