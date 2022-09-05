@@ -282,9 +282,6 @@ let company = document.querySelectorAll("#company");
 let title = document.querySelector("#title");
 let email = document.querySelector("#email");
 let owned = document.querySelector("#owner");
-let street = document.querySelector("#street");
-let created = document.querySelector("#created");
-let contacted = document.querySelector("#contacted");
 let initials = document.getElementById("prof-initials");
 
 const openMenu = () => {

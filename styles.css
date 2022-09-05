@@ -459,6 +459,7 @@ li .badge {
   width: calc(100vw - 325px);
   min-width: 1560px;
   height: 5.4vh;
+  min-height: 40px;
   gap: 30px;
   border-bottom: 1px solid #dfe5e8;
   align-items: center;
@@ -470,7 +471,7 @@ li .badge {
 }
 
 .all-columns {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .all-columns:hover {
