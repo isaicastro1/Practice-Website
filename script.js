@@ -266,6 +266,7 @@ users.map((user) => {
 
 let closeButton = document.getElementById("open-menu-btn");
 let menu = document.getElementById("right-menu");
+let html = document.documentElement;
 
 window.onLoad = () => {
   menu.classList.remove("hide");
@@ -273,6 +274,10 @@ window.onLoad = () => {
 
 const closeMenu = () => {
   menu.classList.add("hide");
+  menu.classList.remove("show");
+  setTimeout(() => {
+    menu.classList.add("disappear");
+  }, 500);
 };
 
 closeButton.addEventListener("click", closeMenu);
@@ -289,8 +294,8 @@ let contacted = document.querySelector("#contacted");
 let initials = document.getElementById("prof-initials");
 
 const openMenu = () => {
-  menu.classList.remove("hide");
   menu.classList.add("show");
+  menu.classList.remove("hide", "disappear");
 };
 
 allUserProfiles.forEach((user) => {

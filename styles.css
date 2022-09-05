@@ -2,7 +2,8 @@ html {
   height: 100vh;
   width: 100vw;
   max-width: 2200px;
-  overflow-y: hidden;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 
 body {
@@ -125,14 +126,14 @@ body {
 }
 
 .list-1 {
-  height: 260px;
+  height: 220px;
   border-bottom: 2px solid rgb(95, 80, 107);
 }
 
 .left-links {
   display: flex;
   color: white;
-  height: 49px;
+  height: 40px;
 }
 
 .left-links:hover,
@@ -182,7 +183,7 @@ body {
 }
 
 .list-2 {
-  height: 260px;
+  height: 220px;
   border-bottom: 2px solid rgb(95, 80, 107);
 }
 
@@ -454,8 +455,9 @@ li .badge {
 .users {
   display: flex;
   justify-content: space-evenly;
-  width: calc(100vw - 365px);
-  height: 48px;
+  width: calc(100vw - 325px);
+  min-width: 1560px;
+  height: 5.4vh;
   gap: 30px;
   border-bottom: 1px solid #dfe5e8;
   align-items: center;
@@ -464,6 +466,10 @@ li .badge {
 .users:hover {
   background-color: #dfe5e8;
   cursor: pointer;
+}
+
+.all-columns {
+  margin-top: 20px;
 }
 
 .all-columns:hover {
@@ -592,6 +598,7 @@ input {
   display: flex;
   flex-direction: column;
   position: absolute;
+  display: none;
   bottom: 0;
   right: -400px;
   width: 400px;
@@ -601,11 +608,16 @@ input {
   box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
   -webkit-box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
   -moz-box-shadow: -5px -1px 15px -7px rgba(0, 0, 0, 0.76);
-  transition: 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+
+.disappear {
+  display: none;
 }
 
 .show {
   transform: translateX(-400px);
+  display: flex;
 }
 
 .hide {
@@ -753,12 +765,12 @@ input {
 .bottom-menu {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: top;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  max-height: 40px;
   padding-bottom: 20px;
 }
 
@@ -773,7 +785,8 @@ input {
 
 .dots {
   color: white;
-  padding-right: 30px;
+  padding: 0 30px 30px 0;
+  align-items: center;
 }
 
 @media (max-width: 730px) {
